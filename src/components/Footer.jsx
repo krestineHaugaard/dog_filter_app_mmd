@@ -1,3 +1,7 @@
 export default function Footer() {
-  return <p>Krestine H</p>;
+  return (
+    <footer>
+      <p>Krestine H</p>
+    </footer>
+  );
 }
