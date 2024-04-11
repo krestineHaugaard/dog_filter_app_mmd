@@ -23,8 +23,12 @@ export default async function HenryPage() {
         width={3024}
         height={4032}
         priority={true} // disables lazy load
+        className="w-full md:w-q/2 xl:w-[600px]"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 600px"
       />
-      <h1>{name}</h1>
+      <div>
+        <h1>{name}</h1>
+      </div>
     </main>
   );
 }
