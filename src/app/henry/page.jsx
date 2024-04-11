@@ -8,7 +8,7 @@ export default async function HenryPage() {
   console.log(data);
   return (
     <main>
-      <h1>Hej</h1>
+      <h1>{data.name}</h1>
     </main>
   );
 }
