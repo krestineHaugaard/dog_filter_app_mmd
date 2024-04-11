@@ -1,8 +1,17 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Frontpage",
   description: "allethe dogs",
 };
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <main>
+      <h1>Hello world</h1>
+      <Link href="/henry" prefetch={false}>
+        Henry
+      </Link>
+    </main>
+  );
 }
