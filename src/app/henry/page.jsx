@@ -4,8 +4,7 @@ async function getHenry() {
 }
 
 export async function generateMetadata() {
-  const data = await getHenry();
-  const { name, age } = data;
+  const { name, age } = await getHenry();
   return {
     title: name,
     description: `${name} is ${age} years old`,
@@ -13,8 +12,7 @@ export async function generateMetadata() {
 }
 
 export default async function HenryPage() {
-  const data = await getHenry();
-  const { name } = data;
+  const { name } = await getHenry();
   return (
     <main>
       <h1>{name}</h1>
