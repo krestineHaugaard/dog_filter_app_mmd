@@ -3,7 +3,7 @@ export const metadata = {
   description: "allethe dogs",
 };
 
-export default async function Home() {
+export default function Home() {
   return (
     <main>
       <h1>Hello world</h1>
