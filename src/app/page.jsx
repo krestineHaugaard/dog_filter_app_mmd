@@ -9,9 +9,6 @@ export default function Home() {
   return (
     <main>
       <h1>Hello world</h1>
-      <Link href="/henry" prefetch={false}>
-        Henry
-      </Link>
     </main>
   );
 }
