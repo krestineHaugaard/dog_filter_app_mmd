@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
+import Image from "next/image";
 
-// [slug]/page.js
 export async function generateStaticParams() {
   const res = await fetch("https://nice-dogs.vercel.app/api/dogs");
   const pages = await res.json();
@@ -35,18 +35,33 @@ export default async function DogPage({ params }) {
   if (res.status !== 200) return notFound();
 
   const data = await res.json();
+  const { name, favouriteColor, age, image } = data;
 
   return (
-    <main>
-      <h1>{data.name}</h1>
-      <p>
-        {data.name} is {data.age} {data.age === "1" ? "year" : "years"} old.
-      </p>
-      <p>
-        {data.favouriteColor === undefined
-          ? ""
-          : `${data.name}s favorite color is ${data.favouriteColor}.`}
-      </p>
+    <main className="md:flex max-w-7xl mx-auto">
+      <Image
+        src={image.url}
+        alt="A cute dog"
+        width={image.width}
+        height={image.height}
+        priority={true}
+        className="w-full md:w-1/2 xl:w-[600px]"
+        sizes="(max-width: 768px) 100vw,
+         (max-width: 1280px) 50vw,
+         600px"
+      />
+      <div>
+        <h1>{name}</h1>
+        <p>
+          {name} is {age} {age === "1" ? "year" : "years"} old.
+        </p>
+
+        {favouriteColor && (
+          <p>
+            {name}s favorite color is {favouriteColor}.
+          </p>
+        )}
+      </div>
     </main>
   );
 }

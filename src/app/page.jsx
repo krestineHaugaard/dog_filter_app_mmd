@@ -2,7 +2,7 @@ export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Frontpage",
-  description: "allethe dogs",
+  description: "All the dogs",
 };
 
 export default async function Home() {
